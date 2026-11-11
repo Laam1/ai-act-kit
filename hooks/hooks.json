@@ -1,0 +1,16 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "mcp__.*[Rr]esend.*__.*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/scripts/send-guard.mjs\"",
+            "onFailure": "block"
+          }
+        ]
+      }
+    ]
+  }
+}
